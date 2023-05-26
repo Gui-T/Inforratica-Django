@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import Computer
+from .models import Computador
 
-admin.site.register(Computer)
+admin.site.register(Computador)

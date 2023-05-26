@@ -19,10 +19,10 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from inforratica.views import ComputerViewSet
+from inforratica.views import ComputadorViewSet
 
 router = DefaultRouter()
-router.register(r"computers", ComputerViewSet)
+router.register(r"computadores", ComputadorViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
 
-from inforratica.models import Computer
+from inforratica.models import Computador
 
-class ComputerSerializer(ModelSerializer):
+class ComputadorSerializer(ModelSerializer):
     class Meta:
-        model = Computer
+        model = Computador
         fields = "__all__"
