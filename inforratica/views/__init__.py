@@ -1,1 +1,1 @@
-from .computador import Computador
+from .computador import ComputadorViewSet

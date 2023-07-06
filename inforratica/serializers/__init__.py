@@ -1,1 +1,1 @@
-from .autor import AutorSerializer
+from .computador import ComputadorSerializer

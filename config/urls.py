@@ -20,6 +20,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from inforratica.views import ComputadorViewSet
+from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"computadores", ComputadorViewSet)
@@ -27,4 +28,5 @@ router.register(r"computadores", ComputadorViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(router.urls)),
+    path("api/", include(usuario_router.urls)),
 ]

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "inforratica",
     "rest_framework",
-    "corsheaders"
+    "corsheaders",
+    "usuario",
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = "usuario.Usuario"
