@@ -20,10 +20,12 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from inforratica.views import ComputadorViewSet
+from inforratica.views import ClienteViewSet
 from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"computadores", ComputadorViewSet)
+router.register(r"clientes", ClienteViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
