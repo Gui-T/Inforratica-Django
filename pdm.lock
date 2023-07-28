@@ -60,6 +60,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "django-cpf"
+version = "0.1.0"
+requires_python = ">=3.6"
+summary = "Campo CPF Field para usar no Model e ModelForm"
+
+[[package]]
 name = "djangorestframework"
 version = "3.14.0"
 requires_python = ">=3.6"
@@ -132,7 +138,7 @@ summary = "Provider of IANA time zone data"
 lock_version = "4.2"
 cross_platform = true
 groups = ["default", "dev"]
-content_hash = "sha256:64e02856048b377c871a02534e6d14d689dd1bd9a49fea218181e6f232376ce4"
+content_hash = "sha256:2fdcc2c2bc8c1630d2e9a0fe7bbd76ce82304ba4c31937d8377eaf634bb5935f"
 
 [metadata.files]
 "asgiref 3.7.1" = [
@@ -181,6 +187,10 @@ content_hash = "sha256:64e02856048b377c871a02534e6d14d689dd1bd9a49fea218181e6f23
 "django-cors-headers 4.0.0" = [
     {url = "https://files.pythonhosted.org/packages/3e/a8/96d90604e76a0fbe449cb104029f2a003916b68ddf12af3ea390654e5a01/django_cors_headers-4.0.0-py3-none-any.whl", hash = "sha256:e3cbd247a1a835da4cf71a70d4214378813ea7e08337778b82cb2c1bc19d28d6"},
     {url = "https://files.pythonhosted.org/packages/83/d5/4f98ffda4b32f8da5ceb27908f45bd479ae03842db1083a2139034d3c62f/django_cors_headers-4.0.0.tar.gz", hash = "sha256:a971cd4c75b29974068cc36b5c595698822f1e0edd5f1b32ea42ea37326ad4aa"},
+]
+"django-cpf 0.1.0" = [
+    {url = "https://files.pythonhosted.org/packages/61/25/3b33ac6e8b344a80c03ca2ca037ceb1d08bdab91ba05028ee04d5f310eef/django-cpf-0.1.0.tar.gz", hash = "sha256:3c4519ddd2784ba4d1ec3ce14d16e9e12d36d9178fee2fa8c4b4be2fb4ed0f50"},
+    {url = "https://files.pythonhosted.org/packages/63/c5/fc6b668cd9be357e878c794cb3134a1ec1f52715509a3deef1598da5a7fe/django_cpf-0.1.0-py3-none-any.whl", hash = "sha256:3b973632d4a2d3f8d0d028ddb0e312e42c6de9827556904e922a2ac68af493ac"},
 ]
 "djangorestframework 3.14.0" = [
     {url = "https://files.pythonhosted.org/packages/8e/53/5b2a002c5ebafd60dff1e1945a7d63dee40155830997439a9ba324f0fd50/djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},
