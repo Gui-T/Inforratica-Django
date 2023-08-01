@@ -7,4 +7,7 @@ class Cliente(models.Model):
     telefone = models.CharField(max_length=50)
     endereco = models.CharField(max_length=50)
     def __str__(self):
-        return f"{self.nome}"
+        return self.nome
+    
+    class Meta:
+        verbose_name_plural = "Clientes"
