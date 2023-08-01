@@ -7,7 +7,7 @@ authors = [
     {name = "Guilherme Tamanini", email = "guilherme.gui.tama@gmail.com"},
 ]
 dependencies = [
-    "django>=4.2.3",
+    "django>=4.2.4",
     "djangorestframework>=3.14.0",
     "django-cors-headers>=4.0.0",
     "setuptools>=68.0.0",
