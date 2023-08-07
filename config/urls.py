@@ -21,11 +21,13 @@ from rest_framework.routers import DefaultRouter
 
 from inforratica.views import ComputadorViewSet
 from inforratica.views import ClienteViewSet
+from inforratica.views import OrdemServicoViewSet
 from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"computadores", ComputadorViewSet)
 router.register(r"clientes", ClienteViewSet)
+router.register(r"ordemservico", OrdemServicoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
