@@ -1,3 +1,3 @@
 from .computador import ComputadorSerializer
 from .cliente import ClienteSerializer
-from .ordemservico import OrdemServicoSerializer
+from .ordemservico import OrdemServicoSerializer, OrdemServicoReadSerializer
