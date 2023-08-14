@@ -11,4 +11,4 @@ class OrdemServico (models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT, related_name="ordensservico", null=True, default=None)
  
     def __str__(self):
-        return f"{self.gabinete}"
+        return f"{self.cliente} / {self.computador} / {self.data}"

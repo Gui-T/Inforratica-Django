@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
 
 from inforratica.models import Computador
 from inforratica.serializers import ComputadorSerializer
@@ -8,3 +9,4 @@ from inforratica.serializers import ComputadorSerializer
 class ComputadorViewSet(ModelViewSet):
     queryset = Computador.objects.all()
     serializer_class = ComputadorSerializer
+    permission_classes = [IsAuthenticated]
