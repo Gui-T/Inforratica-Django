@@ -19,8 +19,8 @@ class OrdemServicoViewSet(ModelViewSet):
             return OrdemServicoReadSerializer
         return OrdemServicoSerializer
 
-    def list(self, request):
-        # breakpoint()
-        queryset = OrdemServico.objects.filter(cliente__id=14)
-        serializer = OrdemServicoReadSerializer(queryset, many=True)
-        return Response(serializer.data)
+    # def list(self, request):
+    #     # breakpoint()
+    #     queryset = OrdemServico.objects.filter(cliente__id=14)
+    #     serializer = OrdemServicoReadSerializer(queryset, many=True)
+    #     return Response(serializer.data)
