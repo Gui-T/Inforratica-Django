@@ -8,6 +8,6 @@ class OrdemServico (models.Model):
     valor = models.DecimalField(max_digits=10, decimal_places=2, null=True, default=None)
     computador = models.ForeignKey(Computador, on_delete=models.PROTECT, related_name="ordensservico", null=True, default=None)
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT, related_name="ordensservico", null=True, default=None)
- 
+    
     def __str__(self):
         return f"{self.cliente} / {self.computador} / {self.data}"

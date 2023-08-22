@@ -12,13 +12,15 @@ from inforratica.serializers import OrdemServicoSerializer, OrdemServicoReadSeri
 class OrdemServicoViewSet(ModelViewSet):
     queryset = OrdemServico.objects.all()
     serializer_class = OrdemServicoSerializer
+    queryset = OrdemServico.objects.all().order_by('-data')
     # permission_classes = [IsAuthenticated]
+
 
     def get_serializer_class(self):
         if self.action == "list":
             return OrdemServicoReadSerializer
         return OrdemServicoSerializer
-
+    
     # def list(self, request):
     #     # breakpoint()
     #     queryset = OrdemServico.objects.filter(cliente__id=14)
