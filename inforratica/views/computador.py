@@ -12,7 +12,7 @@ from inforratica.serializers import ComputadorSerializer
 class ComputadorViewSet(ModelViewSet):
     queryset = Computador.objects.all()
     serializer_class = ComputadorSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     # def list(self, request):
     #     # breakpoint()

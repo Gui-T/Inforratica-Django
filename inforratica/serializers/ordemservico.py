@@ -8,17 +8,32 @@ class ClienteDetalheOrdermServicoSerializer(ModelSerializer):
         model = Cliente
         fields = ("id", "nome")
 
+
 class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Computador
-        fields = ("id", "gabinete", "placa_mae", "processador", "memoria_ram", "hd", "ssd",  "fonte", "placa_de_video", "imagem")
+        fields = (
+            "id",
+            "gabinete",
+            "placa_mae",
+            "processador",
+            "memoria_ram",
+            "hd",
+            "ssd",
+            "fonte",
+            "placa_de_video",
+            "imagem",
+        )
+
 
 class OrdemServicoReadSerializer(ModelSerializer):
     cliente = ClienteDetalheOrdermServicoSerializer()
     computador = ComputadorDetalheOrdermServicoSerializer()
+
     class Meta:
         model = OrdemServico
         fields = "__all__"
+
 
 class OrdemServicoSerializer(ModelSerializer):
     class Meta:

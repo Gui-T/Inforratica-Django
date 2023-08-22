@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Computador(models.Model):
     placa_mae = models.CharField(max_length=50)
     processador = models.CharField(max_length=50)
@@ -10,9 +11,18 @@ class Computador(models.Model):
     fonte = models.CharField(max_length=50)
     gabinete = models.CharField(max_length=50)
     placa_de_video = models.CharField(max_length=50)
-    imagem = models.URLField(max_length=200, default="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX13277208.jpg")
+    imagem = models.URLField(
+        max_length=200,
+        default="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX13277208.jpg",
+    )
 
-    cliente = models.ForeignKey('inforratica.Cliente', on_delete=models.PROTECT, related_name="computadores", null=True, default=None)
+    cliente = models.ForeignKey(
+        "inforratica.Cliente",
+        on_delete=models.PROTECT,
+        related_name="computadores",
+        null=True,
+        default=None,
+    )
 
     def __str__(self):
         return f"{self.gabinete}"
