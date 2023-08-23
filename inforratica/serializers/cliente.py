@@ -11,7 +11,7 @@ class ClienteSerializer(ModelSerializer):
             "nome",
             "cpf",
             "email",
+            "endereco",
             "telefone",
-            "computadores",
         )
         depth = 1
