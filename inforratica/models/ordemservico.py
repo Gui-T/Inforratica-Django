@@ -1,10 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.db.models import Q
 from .computador import Computador
 from .cliente import Cliente
 from .notebook import Notebook
-
 
 class OrdemServico(models.Model):
     data = models.DateField(auto_now_add=True)
@@ -41,5 +39,3 @@ class OrdemServico(models.Model):
         if self.computador and self.notebook:
             raise ValidationError(
                 'Please select either a computador or a notebook, not both.')
-            
-        return f"{self.cliente} / {self.computador} / {self.data}"

@@ -1,5 +1,5 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, StringRelatedField
-
 from inforratica.models import OrdemServico, Cliente, Computador
 
 
@@ -35,7 +35,23 @@ class OrdemServicoReadSerializer(ModelSerializer):
         fields = "__all__"
 
 
-class OrdemServicoSerializer(ModelSerializer):
+class OrdemServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrdemServico
         fields = "__all__"
+
+    def validate(self, data):
+        computador = data.get("computador")
+        notebook = data.get("notebook")
+
+        if computador is None and notebook is None:
+            raise serializers.ValidationError(
+                "Please select either a computador or a notebook."
+            )
+
+        if computador and notebook:
+            raise serializers.ValidationError(
+                "Please select either a computador or a notebook, not both."
+            )
+
+        return data
