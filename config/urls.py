@@ -3,8 +3,9 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from inforratica.views import ComputadorViewSet
 from inforratica.views import ClienteViewSet
+from inforratica.views import ComputadorViewSet
+from inforratica.views import NotebookViewSet
 from inforratica.views import OrdemServicoViewSet
 from usuario.router import router as usuario_router
 from rest_framework_simplejwt.views import (
@@ -13,8 +14,9 @@ from rest_framework_simplejwt.views import (
 )
 
 router = DefaultRouter()
-router.register(r"computadores", ComputadorViewSet)
 router.register(r"clientes", ClienteViewSet)
+router.register(r"computadores", ComputadorViewSet)
+router.register(r"notebooks", NotebookViewSet)
 router.register(r"ordemservico", OrdemServicoViewSet)
 
 urlpatterns = [

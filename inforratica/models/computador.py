@@ -16,13 +16,5 @@ class Computador(models.Model):
         default="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX13277208.jpg",
     )
 
-    cliente = models.ForeignKey(
-        "inforratica.Cliente",
-        on_delete=models.PROTECT,
-        related_name="computadores",
-        null=True,
-        default=None,
-    )
-
     def __str__(self):
         return f"{self.gabinete}"

@@ -1,6 +1,9 @@
+from django.core.exceptions import ValidationError
 from django.db import models
+from django.db.models import Q
 from .computador import Computador
 from .cliente import Cliente
+from .notebook import Notebook
 
 
 class OrdemServico(models.Model):
@@ -16,13 +19,27 @@ class OrdemServico(models.Model):
         null=True,
         default=None,
     )
-    cliente = models.ForeignKey(
-        Cliente,
+    notebook = models.ForeignKey(
+        Notebook,
         on_delete=models.PROTECT,
         related_name="ordensservico",
         null=True,
         default=None,
     )
-
-    def __str__(self):
+    cliente = models.ForeignKey(
+        Cliente,    
+        on_delete=models.PROTECT,
+        related_name="ordensservico",
+        default=None,
+    )
+    
+    def clean(self):
+        # Use Q objects to check if either 'computador' or 'notebook' is selected
+        if not (self.computador or self.notebook):
+            raise ValidationError(
+                'Please select either a computador or a notebook.')
+        if self.computador and self.notebook:
+            raise ValidationError(
+                'Please select either a computador or a notebook, not both.')
+            
         return f"{self.cliente} / {self.computador} / {self.data}"
