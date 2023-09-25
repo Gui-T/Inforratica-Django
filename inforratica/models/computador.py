@@ -1,4 +1,5 @@
 from django.db import models
+from uploader.models import Image 
 
 
 class Computador(models.Model):
@@ -11,9 +12,13 @@ class Computador(models.Model):
     fonte = models.CharField(max_length=50)
     gabinete = models.CharField(max_length=50)
     placa_de_video = models.CharField(max_length=50)
-    imagem = models.URLField(
-        max_length=200,
-        default="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX13277208.jpg",
+    capa = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
     )
 
     def __str__(self):
