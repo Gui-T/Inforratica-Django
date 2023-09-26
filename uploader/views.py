@@ -2,7 +2,7 @@ from rest_framework import mixins, parsers, viewsets
 
 from uploader.models import Document, Image
 from uploader.serializers import DocumentUploadSerializer, ImageUploadSerializer
-from django.views.decorators.csrf import csrf_exempt
+# from django.views.decorators.csrf import csrf_exempt
 
 
 

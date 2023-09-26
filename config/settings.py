@@ -14,8 +14,8 @@ SECRET_KEY = "django-insecure-z#33gtqicq)*42fb6-q$hyjwlfuu-u1+-=&j1)7)-su3v26+*f
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_COOKIE_HTTPONLY = True
-CSRF_TRUSTED_ORIGINS = ["http://localhost:19003","http://localhost:5173", "http://localhost:8000", "https://*.fl0.io/"]
+# CSRF_COOKIE_HTTPONLY = True
+CSRF_TRUSTED_ORIGINS = ["http://*","http://localhost:5173", "http://localhost:8000", "https://*.fl0.io/"]
 
 # Application definition
 
@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'cpf_field',
 ]
 
-MEDIA_URL = "http://191.52.55.36:19003/media/"
+MEDIA_URL = "http://191.52.55.47:19003/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
@@ -129,7 +129,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = "usuario.Usuario"
-
 
 # REST_FRAMEWORK = {
 #     "DEFAULT_AUTHENTICATION_CLASSES": (
