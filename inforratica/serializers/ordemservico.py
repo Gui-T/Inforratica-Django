@@ -22,7 +22,6 @@ class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
             "ssd",
             "fonte",
             "placa_de_video",
-            "imagem",
         )
 
 

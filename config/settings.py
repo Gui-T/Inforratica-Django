@@ -14,7 +14,8 @@ SECRET_KEY = "django-insecure-z#33gtqicq)*42fb6-q$hyjwlfuu-u1+-=&j1)7)-su3v26+*f
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_COOKIE_HTTPONLY = True
+CSRF_TRUSTED_ORIGINS = ["http://localhost:19003","http://localhost:5173", "http://localhost:8000", "https://*.fl0.io/"]
 
 # Application definition
 
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -105,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "pt-br"
 
 TIME_ZONE = "America/Sao_Paulo"
 
