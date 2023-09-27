@@ -12,3 +12,4 @@ from inforratica.serializers import NotebookSerializer
 class NotebookViewSet(ModelViewSet):
     queryset = Notebook.objects.all()
     serializer_class = NotebookSerializer
+    permission_classes = [IsAuthenticated]
