@@ -1,22 +1,30 @@
 from pathlib import Path
 from datetime import timedelta
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
+
+MODE = os.getenv("MODE")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-z#33gtqicq)*42fb6-q$hyjwlfuu-u1+-=&j1)7)-su3v26+*f"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insoiuroewtiuoreiut")
+DEBUG = os.getenv("DEBUG", "False")
 ALLOWED_HOSTS = ["*"]
-# CSRF_COOKIE_HTTPONLY = True
-CSRF_TRUSTED_ORIGINS = ["http://*","http://localhost:5173", "http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
+
+
+MEDIA_ENDPOINT = "/api/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
+
+if MODE in ["PRODUCTION", "MIGRATE"]:
+    MEDIA_URL = '/api/media/' 
+else:    
+    MY_IP = os.getenv("MY_IP", "127.0.0.1")
+    MEDIA_URL = f"http://{MY_IP}:19003/api/media/"
+
 
 # Application definition
 
@@ -35,11 +43,6 @@ INSTALLED_APPS = [
     "usuario",
     'cpf_field',
 ]
-
-MEDIA_URL = "http://191.52.55.47:19003/media/"
-MEDIA_ENDPOINT = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-FILE_UPLOAD_PERMISSIONS = 0o640
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -144,3 +147,9 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
     "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
 }
+
+print("MODE: ", MODE)
+print("DEBUG: ", DEBUG)
+print("SECRET_KEY: ", SECRET_KEY)
+print("MEDIA_URL: ", MEDIA_URL)
+print("MY_IP: ", MY_IP)
