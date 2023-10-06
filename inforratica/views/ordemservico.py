@@ -5,7 +5,8 @@ from rest_framework.response import Response
 
 from rest_framework.permissions import IsAuthenticated
 
-from inforratica.models import OrdemServico, Cliente
+from inforratica.models import OrdemServico
+from usuario.models import Usuario
 from inforratica.serializers import OrdemServicoSerializer, OrdemServicoReadSerializer
 
 

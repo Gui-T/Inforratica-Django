@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import Group
 
 from .managers import CustomUserManager
 
@@ -28,8 +29,8 @@ class Usuario(AbstractUser):
        super().save(*args, **kwargs)
        # If the user is being created, assign them to the "cliente" group
        if created:
-           cliente_group, _ = Group.objects.get_or_create(name="cliente")
-           self.groups.add(cliente_group)
+           clientes_group, _ = Group.objects.get_or_create(name="clientes")
+           self.groups.add(clientes_group)
 
     class Meta:
         verbose_name = "Usuário"

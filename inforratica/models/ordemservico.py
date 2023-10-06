@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from .computador import Computador
-from .cliente import Cliente
+from usuario.models import Usuario
 from .notebook import Notebook
 
 class OrdemServico(models.Model):
@@ -24,8 +24,8 @@ class OrdemServico(models.Model):
         null=True,
         default=None,
     )
-    cliente = models.ForeignKey(
-        Cliente,    
+    usuario = models.ForeignKey(
+        Usuario,    
         on_delete=models.PROTECT,
         related_name="ordensservico",
         default=None,

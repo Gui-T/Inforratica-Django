@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "inforratica",
-    # "rest_framework_simplejwt",
+    "rest_framework_simplejwt",
     "rest_framework",
     "corsheaders",
     "uploader",
@@ -134,17 +134,17 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = "usuario.Usuario"
 
-# REST_FRAMEWORK = {
-#     "DEFAULT_AUTHENTICATION_CLASSES": (
-#         "rest_framework_simplejwt.authentication.JWTAuthentication",
-#     ),
-#     "DEFAULT_PERMISSION_CLASSES": [
-#         "rest_framework.permissions.DjangoModelPermissions",
-#     ],
-# }
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
+}
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=99999),
     "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
 }
 

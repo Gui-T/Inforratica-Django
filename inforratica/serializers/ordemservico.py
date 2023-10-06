@@ -1,12 +1,13 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, StringRelatedField
-from inforratica.models import OrdemServico, Cliente, Computador
+from inforratica.models import OrdemServico, Computador
+from usuario.models import Usuario
 
 
-class ClienteDetalheOrdermServicoSerializer(ModelSerializer):
+class UsuarioDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
-        model = Cliente
-        fields = ("id", "nome")
+        model = Usuario
+        fields = "__all__"
 
 
 class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
@@ -26,7 +27,7 @@ class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
 
 
 class OrdemServicoReadSerializer(ModelSerializer):
-    cliente = ClienteDetalheOrdermServicoSerializer()
+    usuario = UsuarioDetalheOrdermServicoSerializer()
     computador = ComputadorDetalheOrdermServicoSerializer()
 
     class Meta:
