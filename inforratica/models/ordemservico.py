@@ -7,9 +7,8 @@ from .notebook import Notebook
 class OrdemServico(models.Model):
     data = models.DateField(auto_now_add=True)
     descricao = models.TextField(max_length=500)
-    valor = models.DecimalField(
-        max_digits=10, decimal_places=2, null=True, default=None
-    )
+    valor = models.DecimalField( max_digits=10, decimal_places=2, null=True, default=None)
+    status = models.TextField(max_length=50, null=True, default=None)
     computador = models.ForeignKey(
         Computador,
         on_delete=models.PROTECT,
