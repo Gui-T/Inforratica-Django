@@ -23,7 +23,7 @@ class OrdemServico(models.Model):
         null=True,
         default=None,
     )
-    usuario = models.ForeignKey(
+    cliente = models.ForeignKey(
         Usuario,    
         on_delete=models.PROTECT,
         related_name="ordensservico",
