@@ -13,17 +13,8 @@ class UsuarioDetalheOrdermServicoSerializer(ModelSerializer):
 class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Computador
-        fields = (
-            "id",
-            "gabinete",
-            "placa_mae",
-            "processador",
-            "memoria_ram",
-            "hd",
-            "ssd",
-            "fonte",
-            "placa_de_video",
-        )
+        fields = "__all__"
+        depth = 1
 
 
 class OrdemServicoReadSerializer(ModelSerializer):

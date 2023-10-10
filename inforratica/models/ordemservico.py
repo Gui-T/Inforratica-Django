@@ -23,11 +23,12 @@ class OrdemServico(models.Model):
         null=True,
         default=None,
     )
-    cliente = models.ForeignKey(
+    usuario = models.ForeignKey(
         Usuario,    
         on_delete=models.PROTECT,
         related_name="ordensservico",
         default=None,
+        null=True,
     )
     
     def clean(self):

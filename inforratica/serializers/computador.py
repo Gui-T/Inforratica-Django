@@ -19,4 +19,3 @@ class ComputadorSerializer(ModelSerializer):
     class Meta:
         model = Computador
         fields = "__all__"
-
