@@ -23,7 +23,7 @@ if MODE in ["PRODUCTION", "MIGRATE"]:
     MEDIA_URL = '/api/media/' 
 else:    
     MY_IP = os.getenv("MY_IP", "127.0.0.1")
-    MEDIA_URL = f"http://{MY_IP}:19003/api/media/"
+    MEDIA_URL = f"https://silver-spoon-vj57479jgvp2x59q-19003.app.github.dev/api/media/"
 
 
 # Application definition
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "inforratica",
-    "rest_framework_simplejwt",
+    # "rest_framework_simplejwt",
     "rest_framework",
     "corsheaders",
     "uploader",
@@ -134,14 +134,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = "usuario.Usuario"
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissions",
-    ],
-}
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": (
+#         "rest_framework_simplejwt.authentication.JWTAuthentication",
+#     ),
+#     "DEFAULT_PERMISSION_CLASSES": [
+#         "rest_framework.permissions.DjangoModelPermissions",
+#     ],
+# }
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=99999),

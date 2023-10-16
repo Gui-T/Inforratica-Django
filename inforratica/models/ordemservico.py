@@ -25,7 +25,7 @@ class OrdemServico(models.Model):
     )
     usuario = models.ForeignKey(
         Usuario,    
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="ordensservico",
         default=None,
         null=True,
