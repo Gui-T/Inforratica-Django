@@ -6,9 +6,6 @@ description = ""
 authors = [
     {name = "Guilherme Tamanini", email = "guilherme.gui.tama@gmail.com"},
 ]
-[[tool.pdm.autoexport]]
-filename = "requirements.txt"
-without-hashes = "true"
 dependencies = [
     "django>=4.2.6",
     "djangorestframework>=3.14.0",
@@ -22,8 +19,9 @@ dependencies = [
     "netifaces>=0.11.0",
     "gunicorn>=21.2.0",
     "whitenoise[brotli]>=6.6.0",
+    "black>=23.10.0",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 
@@ -39,3 +37,7 @@ dev = [
 [tool.pdm.scripts]
 pre_dev = "python ./scripts/set_my_ip.py"
 dev = "python manage.py runserver 0.0.0.0:19003"
+
+[[tool.pdm.autoexport]]
+filename = "requirements.txt"
+without-hashes = "true"
