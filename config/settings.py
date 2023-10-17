@@ -20,6 +20,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 if MODE in ["PRODUCTION", "MIGRATE"]:
+    MY_IP = os.getenv("MY_IP", "127.0.0.1")
     MEDIA_URL = '/media/'
 else: 
     MY_IP = os.getenv("MY_IP", "127.0.0.1")
