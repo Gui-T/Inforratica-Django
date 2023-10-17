@@ -25,7 +25,9 @@ else:
     MY_IP = os.getenv("MY_IP", "127.0.0.1")
     MEDIA_URL = f"https://silver-spoon-vj57479jgvp2x59q-19003.app.github.dev/api/media/"
 
-
+if MODE == "PRODUCTION":
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Application definition
 
 INSTALLED_APPS = [
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
