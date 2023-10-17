@@ -1,7 +1,7 @@
 from pathlib import Path
 from datetime import timedelta
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -20,15 +20,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 if MODE in ["PRODUCTION", "MIGRATE"]:
-    MEDIA_URL = '/api/media/' 
+    MEDIA_URL = '/media/' 
 else:    
     MY_IP = os.getenv("MY_IP", "127.0.0.1")
-    MEDIA_URL = f"https://silver-spoon-vj57479jgvp2x59q-19003.app.github.dev/api/media/"
+    MEDIA_URL = f"http://{MY_IP}:19003/media/"
 
 if MODE == "PRODUCTION":
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# Application definition
+
+if MODE == "DEVELOPMENT":
+    MY_IP = os.getenv("MY_IP", "127.0.0.1")
+    MEDIA_URL = f"http://{MY_IP}:19003/media/"
+
+else:
+    MEDIA_URL = "/media/"
 
 INSTALLED_APPS = [
     "django.contrib.admin",
