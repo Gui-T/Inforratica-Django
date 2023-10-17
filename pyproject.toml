@@ -6,6 +6,9 @@ description = ""
 authors = [
     {name = "Guilherme Tamanini", email = "guilherme.gui.tama@gmail.com"},
 ]
+[[tool.pdm.autoexport]]
+filename = "requirements.txt"
+without-hashes = "true"
 dependencies = [
     "django>=4.2.6",
     "djangorestframework>=3.14.0",
@@ -24,7 +27,7 @@ requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
-[build-system]
+[build-system] 
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
