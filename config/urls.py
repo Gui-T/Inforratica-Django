@@ -29,6 +29,7 @@ urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/media/", include(uploader_router.urls)),
-    #path('registration/', RegistrationViewSet.as_view({'post': 'register'}), name='registration'), 
+    path('user_info/', OrdemServicoViewSet.as_view({'get': 'user_info'}), name='user-info'),
+    path('ordemservico/user_orders/', OrdemServicoViewSet.as_view({'get': 'user_orders'}), name='user-orders'),
 ]
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
