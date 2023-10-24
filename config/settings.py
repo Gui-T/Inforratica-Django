@@ -20,6 +20,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 if MODE in ["PRODUCTION", "MIGRATE"]:
+    MY_IP = os.getenv("MY_IP", "127.0.0.1")
+    MEDIA_URL = '/media/'
+else: 
+    MY_IP = os.getenv("MY_IP", "127.0.0.1")
+    MEDIA_URL = f"http://{MY_IP}:19003/media/"
+
+if MODE == "PRODUCTION":
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+if MODE in ["PRODUCTION", "MIGRATE"]:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -39,11 +50,6 @@ else:
     }
 
 print(MODE, DATABASES)
-
-if MODE == "PRODUCTION":
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -95,20 +101,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -169,3 +161,5 @@ SIMPLE_JWT = {
 print("MODE: ", MODE)
 print("DEBUG: ", DEBUG)
 print("SECRET_KEY: ", SECRET_KEY)
+print("MEDIA_URL: ", MEDIA_URL)
+print("MY_IP: ", MY_IP)
