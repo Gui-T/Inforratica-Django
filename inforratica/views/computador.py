@@ -12,10 +12,4 @@ from inforratica.serializers import ComputadorSerializer
 class ComputadorViewSet(ModelViewSet):
     queryset = Computador.objects.all()
     serializer_class = ComputadorSerializer
-    # permission_classes = [IsAuthenticated]
-
-    # def list(self, request):
-    #     # breakpoint()
-    #     queryset = Computador.objects.filter(cliente__id=3)
-    #     serializer = ComputadorSerializer(queryset, many=True)
-    #     return Response(serializer.data)
+    permission_classes = [IsAuthenticated]
