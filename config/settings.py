@@ -169,5 +169,3 @@ SIMPLE_JWT = {
 print("MODE: ", MODE)
 print("DEBUG: ", DEBUG)
 print("SECRET_KEY: ", SECRET_KEY)
-print("MEDIA_URL: ", MEDIA_URL)
-print("MY_IP: ", MY_IP)
