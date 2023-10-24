@@ -157,9 +157,3 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=99999),
     "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
 }
-
-print("MODE: ", MODE)
-print("DEBUG: ", DEBUG)
-print("SECRET_KEY: ", SECRET_KEY)
-print("MEDIA_URL: ", MEDIA_URL)
-print("MY_IP: ", MY_IP)
