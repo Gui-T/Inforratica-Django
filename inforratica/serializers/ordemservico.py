@@ -33,19 +33,3 @@ class OrdemServicoSerializer(serializers.ModelSerializer):
         model = OrdemServico
         fields = "__all__"
         depth = 2
-
-    def validate(self, data):
-        computador = data.get("computador")
-        notebook = data.get("notebook")
-
-        if computador is None and notebook is None:
-            raise serializers.ValidationError(
-                "Please select either a computador or a notebook."
-            )
-
-        if computador and notebook:
-            raise serializers.ValidationError(
-                "Please select either a computador or a notebook, not both."
-            )
-
-        return data
