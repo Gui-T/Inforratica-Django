@@ -30,12 +30,3 @@ class OrdemServico(models.Model):
         default=None,
         null=True,
     )
-    
-    def clean(self):
-        # Use Q objects to check if either 'computador' or 'notebook' is selected
-        if not (self.computador or self.notebook):
-            raise ValidationError(
-                'Please select either a computador or a notebook.')
-        if self.computador and self.notebook:
-            raise ValidationError(
-                'Please select either a computador or a notebook, not both.')
