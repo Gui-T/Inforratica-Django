@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     "uploader",
     "usuario",
     'cpf_field',
+    'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
