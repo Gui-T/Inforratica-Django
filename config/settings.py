@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'cloudinary',
+    'cloudinary_storage',
     "inforratica",
     "rest_framework_simplejwt",
     "rest_framework",
@@ -28,9 +30,6 @@ INSTALLED_APPS = [
     "uploader",
     "usuario",
     'cpf_field',
-    'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
