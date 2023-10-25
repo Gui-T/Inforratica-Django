@@ -16,6 +16,7 @@ class OrdemServicoViewSet(ModelViewSet):
     queryset = OrdemServico.objects.all()
     serializer_class = OrdemServicoSerializer
     queryset = OrdemServico.objects.all().order_by("-data")
+    depth = 2
     permission_classes = [IsAuthenticated]
 
     @action(detail=False, methods=['GET'])
