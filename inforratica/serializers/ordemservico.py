@@ -8,13 +8,14 @@ class UsuarioDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Usuario
         fields = "__all__"
+        depth = 2
 
 
 class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Computador
         fields = "__all__"
-        depth = 1
+        depth = 2
 
 
 class OrdemServicoReadSerializer(ModelSerializer):
@@ -24,12 +25,14 @@ class OrdemServicoReadSerializer(ModelSerializer):
     class Meta:
         model = OrdemServico
         fields = "__all__"
+        depth = 2
 
 
 class OrdemServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrdemServico
         fields = "__all__"
+        depth = 2
 
     def validate(self, data):
         computador = data.get("computador")
