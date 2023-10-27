@@ -32,4 +32,3 @@ class OrdemServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrdemServico
         fields = "__all__"
-        depth = 1
