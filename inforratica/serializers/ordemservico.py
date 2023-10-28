@@ -24,12 +24,13 @@ class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
 
 class OrdemServicoReadSerializer(ModelSerializer):
     usuario = UsuarioDetalheOrdermServicoSerializer()
+    notebook = NotebookDetalheOrdermServicoSerializer()
     computador = ComputadorDetalheOrdermServicoSerializer()
 
     class Meta:
         model = OrdemServico
         fields = "__all__"
-        depth = 1
+        depth = 2
        
 class OrdemServicoSerializer(serializers.ModelSerializer):
     class Meta:
