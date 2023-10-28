@@ -8,19 +8,19 @@ class UsuarioDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Usuario
         fields = "__all__"
-        depth = 1
+        depth = 2
         
 class NotebookDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Notebook
         fields = "__all__"
-        depth = 1
+        depth = 2
 
 class ComputadorDetalheOrdermServicoSerializer(ModelSerializer):
     class Meta:
         model = Computador
         fields = "__all__"
-        depth = 1
+        depth = 2
 
 class OrdemServicoReadSerializer(ModelSerializer):
     usuario = UsuarioDetalheOrdermServicoSerializer()
