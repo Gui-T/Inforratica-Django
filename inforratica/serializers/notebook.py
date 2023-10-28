@@ -19,3 +19,4 @@ class NotebookSerializer(ModelSerializer):
     class Meta:
         model = Notebook
         fields = "__all__"
+        depth = 2
