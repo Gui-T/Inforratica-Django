@@ -5,6 +5,7 @@ from uploader.serializers import ImageSerializer
 
 from inforratica.models import Notebook
 
+
 class NotebookSerializer(ModelSerializer):
     capa_attachment_key = SlugRelatedField(
         source="capa",
